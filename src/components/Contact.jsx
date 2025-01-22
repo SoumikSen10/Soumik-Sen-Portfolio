@@ -11,7 +11,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm('service_yv015bv', 'template_vzzljij', form.current, 'xFvm6QzwCCqwDFzii')
+      .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
       .then(
         (result) => {
           setOpen(true);
