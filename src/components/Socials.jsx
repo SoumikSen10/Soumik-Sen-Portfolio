@@ -7,6 +7,7 @@ import {
   IconBrandLeetcode,
   IconBrandLinkedin,
   IconBrandX,
+  IconFileText,
   IconExchange,
   IconHome,
   IconNewSection,
@@ -57,6 +58,13 @@ export function Socials() {
       ),
       href: "https://leetcode.com/u/DragonRage/",
     },
+    {
+      title: "Resume",
+      icon: (
+        <IconFileText className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "https://drive.google.com/file/d/1-X2-H9ICwidG9DPXh332suhMb-rFyz8M/view?usp=sharing", 
+    }
     
   ];
 
