@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import SplitText from "../components/SplitText";
 
+import "./HeroPage.css";
+
 const HeroPage = () => {
   // Initialize the useNavigate hook
   const navigate = useNavigate();
@@ -10,23 +12,28 @@ const HeroPage = () => {
   const lines = [
     {
       text: "Hii, my name is ",
-      size: "text-xl sm:text-2xl lg:text-3xl",
       color: "text-red-500",
+      className:"line-1"
     },
     {
       text: "Soumik Sen",
-      size: "text-4xl sm:text-5xl lg:text-7xl",
       color: "text-white",
+      className:"line-2"
     },
     {
       text: "I'm a Full-Stack Developer",
-      size: "text-2xl sm:text-3xl lg:text-4xl",
       color: "text-blue-500",
+      className:"line-3"
     },
     {
-      text: "I specialize in building exceptional digital experiences. Currently, I'm focused on building responsive full-stack web applications.",
-      size: "text-md sm:text-lg lg:text-xl",
+      text: "I specialize in building exceptional digital experiences.",
       color: "text-white",
+      className:"line-4"
+    },
+    {
+      text: "Currently, I'm focused on building responsive full-stack web apps.",
+      color: "text-white",
+      className:"line-5"
     },
   ];
 
@@ -49,7 +56,8 @@ const HeroPage = () => {
           {visibleLines[index] && (
             <SplitText
               text={line.text}
-              className={`${line.size} ${line.color} font-semibold text-center`} // Dynamically apply size
+              className={` ${line.color} font-semibold text-center ${line.className} `} // Dynamically apply size
+              
               delay={20}
               animationFrom={{
                 opacity: 0,

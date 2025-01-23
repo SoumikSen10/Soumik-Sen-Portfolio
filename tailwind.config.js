@@ -1,6 +1,4 @@
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,18 +6,15 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}", // Ensure it scans all files in the src directory
   ],
   darkMode: "class", // Enable class-based dark mode
   theme: {
     screens: {
-      sm: '640px', // Small devices (phones)
-      md: '768px', // Medium devices (tablets)
-      lg: '1024px', // Large devices (desktops)
-      xl: '1280px', // Extra-large devices (large desktops)
-      '2xl': '1536px', // 2X large devices (extra-large screens)
+      sm: "640px", // Small devices (phones)
+      md: "768px", // Medium devices (tablets)
+      lg: "1024px", // Large devices (desktops)
+      xl: "1280px", // Extra-large devices (large desktops)
     },
     extend: {
       animation: {
@@ -80,13 +75,16 @@ module.exports = {
       },
     },
   },
-  plugins: [addVariablesForColors, require("tailwindcss-animate")],
+  plugins: [
+    addVariablesForColors, // Custom plugin for adding CSS variables
+    require("tailwindcss-animate"), // External Tailwind plugin
+  ],
 };
 
-// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+// Custom plugin to add each Tailwind color as a global CSS variable
 function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 
