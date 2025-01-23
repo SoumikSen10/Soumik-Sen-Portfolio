@@ -96,7 +96,7 @@ export const Logo = () => (
     <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="font-medium text-black dark:text-white whitespace-pre"
+      className="font-bold text-black dark:text-white whitespace-pre"
     >
       OUMIK
     </motion.span>
