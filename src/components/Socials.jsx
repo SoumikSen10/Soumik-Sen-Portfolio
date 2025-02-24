@@ -63,7 +63,7 @@ export function Socials() {
       icon: (
         <IconFileText className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://drive.google.com/file/d/1-X2-H9ICwidG9DPXh332suhMb-rFyz8M/view?usp=sharing", 
+      href: "https://drive.google.com/file/d/13e74Fjt3rzU7UaXKVyj4xyO-xOks0FpB/view?usp=sharing", 
     }
     
   ];
